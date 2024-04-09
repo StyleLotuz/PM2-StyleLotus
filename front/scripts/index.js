@@ -1,3 +1,7 @@
+$.get("https://students-api.up.railway.app/movies", (data)=>{
+    data.forEach((movie)=> renderMovies(movie))
+})
+
 const renderMovies = (movie) =>{
     const container = document.getElementById("cardContainer");
 
@@ -41,5 +45,3 @@ const renderMovies = (movie) =>{
   
     container.appendChild(card);
 }
-
-tempData.forEach((movie) => renderMovies(movie));
