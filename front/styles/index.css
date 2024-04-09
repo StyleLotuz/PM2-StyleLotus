@@ -1,0 +1,233 @@
+body {
+  background-color: #343A40;
+  overflow-x: hidden;
+}
+
+header {
+  display: flex;
+  background-color: #1f1e1e;
+  justify-content: space-between;
+}
+
+header img {
+  margin-left: 40px;
+}
+header nav {
+  margin-right: 40px;
+}
+
+header img {
+  width: 50px;
+  height: 50px;
+}
+
+nav ul {
+  height: 100%;
+}
+
+ul {
+  display: flex;
+}
+
+ul li {
+  padding: 5px;
+  line-height: 25px;
+  height: 50px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+ul li:hover {
+  background-color: #b91414;
+  color: white;
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+ul li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: aliceblue;
+  align-self: center;
+  font-size: 14px;
+}
+
+header h1 {
+  font-size: 3em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+h2 {
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  font-size: 2em;
+  margin: 5px;
+}
+
+
+
+.carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 2s ease-in-out;
+}
+
+.carousel img {
+  width: 10%;
+  height: auto;
+}
+
+/* Estilos para el carrusel centrado */
+.carousel-inner {
+  display: flex;
+  justify-content: space-between;
+  animation: slide 10s infinite;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  33.33% {
+    transform: translateX(-100%);
+  }
+  66.66% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+#cardContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  border: 1px solid #fff;
+  width: 80%;
+  margin: auto;
+  border-radius: 5px;
+  padding: 40px;
+  row-gap: 15px;
+}
+
+#card {
+  position: relative;
+  color: #fff;
+  width: 250px;
+  height: 320px;
+  background-color: rgb(153, 151, 149);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 18px;
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+  margin: auto;
+}
+
+#card p:first-of-type {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#card p span {
+  font-size: 15px;
+  color: rgb(92, 90, 89);
+}
+
+#card img {
+  width: 205px;
+  height: 185px;
+  margin-top: 10px;
+}
+
+#card p {
+  align-self: flex-start;
+  margin-left: 20px;
+}
+
+#card span p {
+  position: absolute;
+  margin: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+#card > span {
+  position: absolute;
+  width: 10px;
+  height: 5px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  padding: 5px 10px;
+  border-radius: 50px 50px 0 0;
+}
+
+#card:hover {
+  transform: rotateY(10deg) rotateX(10deg) translateZ(20px);
+}
+
+#card::before, #card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 8px);
+  border: 2px solid transparent;
+  transition: border-color 0.5s ease;
+  pointer-events: none; /* Para que los pseudoelementos no afecten a la interacción del ratón */
+}
+
+#card:hover::before {
+  border-color: red;
+  transition-delay: 0.2s; /* Para crear un efecto de cascada */
+}
+
+#card:hover::after {
+  border-color: blue;
+  transition-delay: 0.4s; /* Para crear un efecto de cascada */
+}
+
+footer{
+  margin-top: 20px;
+  padding-top: 10px;
+  background-color: #1f1e1e;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+footer .links{
+  background-color: red;
+}
+
+footer p{
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+}
+
+footer a{
+  display: inline;
+  width: 50px;
+  height: 50px; 
+}
+
+footer img{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: 40px;
+}
