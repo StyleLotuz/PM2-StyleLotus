@@ -1,5 +1,5 @@
 body {
-  background-color: #343A40;
+  background-color: #343a40;
   overflow-x: hidden;
 }
 
@@ -68,45 +68,19 @@ h2 {
   margin: 5px;
 }
 
-
-
-.carousel {
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-}
-
-.carousel-inner {
+.slider--inner {
   display: flex;
-  transition: transform 2s ease-in-out;
+  flex-wrap: nowrap;
+  height: 500px;
+  transition: all 0.3s ease-in;
 }
 
-.carousel img {
-  width: 10%;
-  height: auto;
+.slider--inner img {
+  width: 100;
+  aspect-ratio: 16/9;
+  margin: 0 auto;
 }
 
-/* Estilos para el carrusel centrado */
-.carousel-inner {
-  display: flex;
-  justify-content: space-between;
-  animation: slide 10s infinite;
-}
-
-@keyframes slide {
-  0% {
-    transform: translateX(0);
-  }
-  33.33% {
-    transform: translateX(-100%);
-  }
-  66.66% {
-    transform: translateX(-200%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
-}
 
 #cardContainer {
   display: grid;
@@ -117,6 +91,7 @@ h2 {
   border-radius: 5px;
   padding: 40px;
   row-gap: 15px;
+  background-color: #000;
 }
 
 #card {
@@ -179,8 +154,9 @@ h2 {
   transform: rotateY(10deg) rotateX(10deg) translateZ(20px);
 }
 
-#card::before, #card::after {
-  content: '';
+#card::before,
+#card::after {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -201,7 +177,7 @@ h2 {
   transition-delay: 0.4s; /* Para crear un efecto de cascada */
 }
 
-footer{
+footer {
   margin-top: 20px;
   padding-top: 10px;
   background-color: #1f1e1e;
@@ -209,23 +185,23 @@ footer{
   grid-template-columns: repeat(3, 1fr);
 }
 
-footer .links{
+footer .links {
   background-color: red;
 }
 
-footer p{
+footer p {
   color: #fff;
   text-align: center;
   line-height: 50px;
 }
 
-footer a{
+footer a {
   display: inline;
   width: 50px;
-  height: 50px; 
+  height: 50px;
 }
 
-footer img{
+footer img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
