@@ -1,6 +1,5 @@
 const sliderAnimation = () => {
   const sliderInner = document.querySelector(".slider--inner");
-  console.log(sliderInner);
   let sliderIndex = 0;
 
   let images = sliderInner.querySelectorAll("img");
