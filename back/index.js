@@ -1,4 +1,5 @@
-const moviesController = require("./src/controllers/moviesController")
-const app = require("./src/server")
+const app = require("./src/server");
 
-app.get("/movies", moviesController.getAllMovies)
+app.listen(3000, () => {
+  console.log("El servidor se esta escuchando en el puerto 3000");
+});

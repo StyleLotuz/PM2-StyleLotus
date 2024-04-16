@@ -1,6 +1,8 @@
-const express = require("express")
+const express = require("express");
+const routes = require("./routes");
 
-app = express()
-app.listen(3000,()=> console.log("El server se esta ejecutando"));
+const app = express();
 
-module.exports = app
+app.use(routes);
+
+module.exports = app;
