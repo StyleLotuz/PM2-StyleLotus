@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agregar Película</title>
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../styles/about.css" />
+  </head>
+  <body class="bg-dark">
+    <header class="row">
+      <div>
+        <img src="../assets/imgs/Logo.png" alt="Logo Style Lotus" />
+      </div>
+      <div>
+        <h1>Pelis Lotus</h1>
+      </div>
+      <div>
+        <nav>
+          <ul class="justify-content-end">
+            <li>
+              <a class="text-decoration-none text-white" href="../index.html"
+                >Inicio</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none text-white" href="aboutme.html"
+                >Sobre Mi</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none text-white" href="history.html"
+                >Historia del Cine</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none text-white" href="contact.html"
+                >Contacto</a
+              >
+            </li>
+            <li>
+              <a class="text-decoration-none text-white" href="createMovie.html"
+                >CREAR PELI</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container container-center-vh">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="add-movie-form">
+            <h2 class="title">Agregar Película</h2>
+            <form>
+              <div class="form-group">
+                <label for="title" class="text-white">Título:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="title"
+                  placeholder="Ingrese el título de la película"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="year" class="text-white">Año:</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="year"
+                  placeholder="Ingrese el año de la película"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="director" class="text-white">Director:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="director"
+                  placeholder="Ingrese el nombre del director"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="duration" class="text-white">Duración:</label>
+                <div class="d-flex">
+                  <input
+                    type="number"
+                    class="form-control mr-2"
+                    id="hours"
+                    placeholder="Horas"
+                    required
+                  />
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="minutes"
+                    placeholder="Minutos"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="genre" class="text-white">Género:</label>
+                <div id="genre-container" style="display: flex">
+                  <button type="button" class="btn btn-secondary add-genre m-1">
+                    +
+                  </button>
+                  <select class="form-control m-1" required>
+                    <option value="Predeterminada">Seleccione un género</option>
+                    <option value="Accion">Acción</option>
+                    <option value="Aventura">Aventura</option>
+                    <option value="Animacion">Animación</option>
+                    <option value="Comedia">Comedia</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Terror">Terror</option>
+                    <option value="Ciencia Ficcion">Ciencia Ficción</option>
+                    <option value="Fantasia">Fantasía</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Thriller">Thriller</option>
+                    <option value="Crimen">Crimen</option>
+                    <option value="Misterio">Misterio</option>
+                    <option value="Documental">Documental</option>
+                    <option value="Musical">Musical</option>
+                    <option value="Western">Western</option>
+                    <option value="Guerra">Guerra</option>
+                    <option value="Historia">Historia</option>
+                    <option value="Biografia">Biografía</option>
+                    <option value="Deporte">Deporte</option>
+                    <option value="Familia">Familia</option>
+                    <option value="Animales">Animales</option>
+                    <option value="Superheroes">Superhéroes</option>
+                    <option value="Suspenso">Suspenso</option>
+                    <option value="No Ficcion">No Ficción</option>
+                    <option value="Cine Negro">Cine Negro</option>
+                    <option value="Infantil">Infantil</option>
+                    <option value="Experimental">Experimental</option>
+                    <option value="Romantica">Romántica</option>
+                    <option value="Erotica">Erótica</option>
+                    <option value="Historico">Histórico</option>
+                    <option value="Psicologica">Psicológica</option>
+                    <option value="Anime">Anime</option>
+                    <option value="Independiente">Independiente</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="rating" class="text-white">Calificación:</label>
+                <input
+                  type="number"
+                  step="0.1"
+                  min="0"
+                  max="10"
+                  class="form-control"
+                  id="rating"
+                  placeholder="Ingrese la calificación (ej. 8.5)"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="poster" class="text-white"
+                  >Enlace del Póster:</label
+                >
+                <input
+                  type="url"
+                  class="form-control"
+                  id="poster"
+                  placeholder="Ingrese el enlace del póster de la película"
+                  required
+                />
+              </div>
+              <div class="row justify-content-center">
+                <div>
+                  <button type="submit" class="btn btn-primary m-3">
+                    Agregar Película
+                  </button>
+                </div>
+                <div>
+                  <button type="button" id="clearBtn" class="btn btn-danger m-3">
+                    Limpiar Formulario
+                  </button>
+                </div>
+            </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-4 d-flex align-items-center justify-content-center">
+          <div class="image">
+            <img
+              src="../assets/imgs/movies.jpg"
+              alt="Contacto Imagen"
+              class="img-fluid center-v"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <img
+              src="../assets/imgs/Logo.png"
+              alt="Logo Style Lotus"
+              class="img-fluid"
+            />
+          </div>
+          <div class="col-md-4">
+            <p>Hecho por Johan Payan</p>
+          </div>
+          <div class="col-md-4">
+            <div id="links">
+              <a href=""
+                ><img
+                  src="../assets/imgs/github.png"
+                  alt="GitHub Logo"
+                  class="img-fluid"
+              /></a>
+              <a href="https://github.com/StyleLotus"
+                ><img
+                  src="../assets/imgs/linkedin.png"
+                  alt="Linkedin Logo"
+                  class="img-fluid"
+              /></a>
+              <a
+                href="https://www.linkedin.com/in/johan-estiven-payan-ortiz-7238b2213/"
+                ><img
+                  src="../assets/imgs/instagram.png"
+                  alt="Instagram Logo"
+                  class="img-fluid"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="../scripts/options.js"></script>
+  </body>
+</html>

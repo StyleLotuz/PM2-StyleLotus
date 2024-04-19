@@ -25,4 +25,10 @@ module.exports = {
         .json({ message: "Hubo un error al encontrar las peliculas" });
     }
   },
+
+  createMovie: async (data) => {
+    console.log(data)
+    let newMovie = MovieModel.create(data);
+    return newMovie;
+  },
 };

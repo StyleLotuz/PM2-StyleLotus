@@ -1,5 +1,9 @@
 const renderMovies = require("./renderCards");
 const sliderAnimation = require("./slider");
+const addGenreBtn = document.querySelector(".add-genre");
+const options = require('./options')
+
+console.log(addGenreBtn)
 
 const axios = require("axios");
 
