@@ -1,6 +1,5 @@
 const renderMovies = (movie) => {
     const container = document.getElementById("cardContainer");
-  
     const card = document.createElement("div");
     card.id = "card";
   

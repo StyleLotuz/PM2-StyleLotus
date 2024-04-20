@@ -1,15 +1,11 @@
+const axios = require("axios");
 const renderMovies = require("./renderCards");
 const sliderAnimation = require("./slider");
-const addGenreBtn = document.querySelector(".add-genre");
-const options = require('./options')
-
-console.log(addGenreBtn)
-
-const axios = require("axios");
 
 const fetchData = async () => {
   try {
     const { data } = await axios.get("http://localhost:3000/movies");
+    console.log(data, "Data")
     data.forEach((movie) => {
       renderMovies(movie);
     });
