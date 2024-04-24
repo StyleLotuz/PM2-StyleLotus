@@ -7,6 +7,7 @@ const getAllMovies = async (req, res) => {
 };
 
 const createMovie = async (req, res) => {
+  console.log(req.body);
   const { title, year, director, duration, genre, rate, poster } = req.body;
   const newMovie = await moviesServices.createMovie({
     title,

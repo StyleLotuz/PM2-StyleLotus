@@ -75,6 +75,8 @@
                   type="number"
                   class="form-control"
                   id="year"
+                  min="1800"
+                  max="2024"
                   placeholder="Ingrese el año de la película"
                   required
                 />
@@ -96,10 +98,14 @@
                     type="number"
                     class="form-control mr-2"
                     id="hours"
+                    min="0"
+                    max="4"
                     placeholder="Horas"
                     required
                   />
                   <input
+                    min="0"
+                    max="60"
                     type="number"
                     class="form-control"
                     id="minutes"
@@ -243,6 +249,6 @@
         </div>
       </div>
     </footer>
-    <script src="../scripts/options.js"></script>
+    <script src="../public/bundle.js"></script>
   </body>
 </html>

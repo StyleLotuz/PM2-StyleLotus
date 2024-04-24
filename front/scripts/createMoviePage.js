@@ -1,7 +1,6 @@
 const genreContainer = document.getElementById("genre-container");
 const inputs = document.querySelectorAll("form input, form select");
-const clearBtn = document.getElementById("clearBtn");
-const submitBtn = document.getElementById("submitBtn");
+const axios = require("axios");
 
 function clearForm() {
   inputs.forEach((input) => {
@@ -15,10 +14,45 @@ function clearForm() {
   }
 }
 
-submitBtn.addEventListener("click", (event) => {
+async function createMovie(event) {
   event.preventDefault();
-  console.log("Logica");
-});
+  let OK = true;
+  inputs.forEach((input) => {
+    if (input.tagName === "SELECT" && input.selectedIndex === 0) {
+      alert("Seleccione un género al menos");
+      OK = false;
+      return;
+    }
+    if (input.tagName === "INPUT" && !input.value.trim()) {
+      alert("Complete todos los campos");
+      OK = false;
+      return;
+    }
+  });
+  if (OK) {
+    const title = inputs[0].value;
+    const year = parseInt(inputs[1].value);
+    const director = inputs[2].value;
+    const duration = `${inputs[3].value} h ${inputs[4].value} min`;
+    const rate = parseFloat(inputs[6].value);
+    const poster = inputs[7].value;
+    let genre = [];
+    const selects = genreContainer.getElementsByTagName("select");
+    for (let i = 0; i < selects.length; i++) {
+      let valorActual = selects[i].value;
+      genre.push(valorActual);
+    }
+    axios.post("http://localhost:3000/movies", {
+      title,
+      year,
+      director,
+      duration,
+      genre,
+      rate,
+      poster,
+    });
+  }
+}
 
 function addGenreSelect() {
   let generos = [
@@ -76,7 +110,8 @@ function addGenreSelect() {
   genreContainer.appendChild(select);
 }
 
-document.getElementById("add-genre").addEventListener("click", addGenreSelect);
-clearBtn.addEventListener("click", clearForm);
-
-
+module.exports = {
+  addGenreSelect,
+  clearForm,
+  createMovie,
+};

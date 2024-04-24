@@ -1,18 +1,48 @@
-const sliderAnimation = () => {
-  const sliderInner = document.querySelector(".slider--inner");
-  let sliderIndex = 0;
+const btnLeft = document.querySelector(".btn-left");
+const btnRight = document.querySelector(".btn-right");
+const slider = document.querySelector("#slider");
+const sliderSection = document.querySelectorAll(".slider-section");
 
-  let images = sliderInner.querySelectorAll("img");
+sliderAnimation = () => {
+  btnRight?.addEventListener("click", (e) => moveToRight());
+  btnLeft?.addEventListener("click", (e) => moveToLeft());
 
   setInterval(() => {
-    let percentage = sliderIndex * -100;
-    sliderInner.style.transform = "translateX(" + percentage + "%)";
-    sliderIndex++;
-    if (sliderIndex > images.length - 1) {
-      sliderIndex = 0;
+    moveToRight();
+  }, 3000);
+
+  let operation = 0;
+  let counter = 0;
+  let widthImg = 100 / sliderSection.length;
+
+  function moveToRight() {
+    if (counter >= sliderSection.length - 1) {
+      counter = 0;
+      operation = 0;
+      slider.style.transform = `translate(-${operation}%)`;
+      slider.style.transition = "none";
+      return;
     }
-  }, 5000);
+    counter++;
+    operation = operation + widthImg;
+    slider.style.transform = `translate(-${operation}%)`;
+    slider.style.transition = "all ease .6s";
+  }
+
+  function moveToLeft() {
+    counter--;
+    if (counter < 0) {
+      counter = sliderSection.length - 1;
+      operation = widthImg * (sliderSection.length - 1);
+      slider.style.transform = `translate(-${operation}%)`;
+      slider.style.transition = "none";
+
+      return;
+    }
+    operation = operation - widthImg;
+    slider.style.transform = `translate(-${operation}%)`;
+    slider.style.transition = "all ease .6s";
+  }
 };
 
-
-module.exports = sliderAnimation
+module.exports = sliderAnimation;
