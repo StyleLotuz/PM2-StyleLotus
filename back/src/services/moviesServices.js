@@ -27,7 +27,6 @@ module.exports = {
   },
 
   createMovie: async (data) => {
-    console.log(data)
     let newMovie = MovieModel.create(data);
     return newMovie;
   },

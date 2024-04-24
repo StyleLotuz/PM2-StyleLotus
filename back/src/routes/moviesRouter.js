@@ -5,6 +5,6 @@ const validateMovies = require("../middlewares/validateMovies");
 const moviesRouter = Router();
 
 moviesRouter.get("/", moviesController.getAllMovies);
-moviesRouter.post("/", validateMovies,  moviesController.createNewMovie);
+moviesRouter.post("/", validateMovies,  moviesController.createMovie);
 
 module.exports = moviesRouter;
