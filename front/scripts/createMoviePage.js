@@ -1,5 +1,6 @@
 const genreContainer = document.getElementById("genre-container");
 const inputs = document.querySelectorAll("form input, form select");
+const created = document.getElementById("created")
 const axios = require("axios");
 
 function clearForm() {
@@ -42,6 +43,7 @@ async function createMovie(event) {
       let valorActual = selects[i].value;
       genre.push(valorActual);
     }
+    try{
     axios.post("http://localhost:3000/movies", {
       title,
       year,
@@ -51,6 +53,13 @@ async function createMovie(event) {
       rate,
       poster,
     });
+    created.style.display = "block"
+    setTimeout(()=>{
+      created.style.display = "none"
+    }, 5000)
+  }catch{
+    console.log("No se pudo crear la pelicula")
+  }
   }
 }
 

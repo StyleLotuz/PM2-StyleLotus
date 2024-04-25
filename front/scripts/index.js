@@ -3,6 +3,7 @@ const renderMovies = require("./renderCards");
 const sliderAnimation = require("./slider");
 const addGenreBtn = document.getElementById("add-genre");
 let currentUrl = window.location.pathname;
+const menuToggle = require("./btnResponsive");
 
 const fetchData = async () => {
   try {
@@ -26,4 +27,7 @@ const submitBtn = document.getElementById("submitBtn");
 submitBtn?.addEventListener("click", createMovie);
 
 fetchData();
-if(currentUrl === '/' || currentUrl === "/index.html") sliderAnimation()
+menuToggle()
+if (currentUrl === "/" || currentUrl === "/index.html") {
+  sliderAnimation();
+}
